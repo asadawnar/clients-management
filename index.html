@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Client, Project, Payment, Finance & Operations Management System">
+    <meta name="theme-color" content="#2563eb">
+    <title>Management System</title>
+    
+    <!-- Core CSS Files -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Application Container -->
+    <div id="app" class="app-container">
+        <!-- Loading State -->
+        <div id="app-loader" class="app-loader hidden">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <!-- Main Layout -->
+        <div id="app-layout" class="app-layout">
+            <!-- Sidebar Navigation -->
+            <aside id="sidebar" class="sidebar">
+                <div class="sidebar-header">
+                    <h1 class="logo">Management</h1>
+                    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#/dashboard" class="nav-link active" data-route="dashboard">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="3" y="3" width="7" height="7"/>
+                                    <rect x="14" y="3" width="7" height="7"/>
+                                    <rect x="14" y="14" width="7" height="7"/>
+                                    <rect x="3" y="14" width="7" height="7"/>
+                                </svg>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#/projects" class="nav-link" data-route="projects">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M9 11h6M9 15h6"/>
+                                </svg>
+                                <span>Projects</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#/clients" class="nav-link" data-route="clients">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>Clients</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#/payments" class="nav-link" data-route="payments">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                    <path d="M1 10h22"/>
+                                </svg>
+                                <span>Payments</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#/finance" class="nav-link" data-route="finance">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <line x1="12" y1="1" x2="12" y2="23"/>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                                <span>Finance</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#/expenses" class="nav-link" data-route="expenses">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="1"/>
+                                    <path d="M19.07 4.93l-2.83 2.83"/>
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                    <path d="M2 11h20"/>
+                                </svg>
+                                <span>Expenses</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#/banks" class="nav-link" data-route="banks">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>Banks</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#/settings" class="nav-link" data-route="settings">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6m-16.78 7.78l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                                </svg>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="app-info">
+                        <p class="version">v1.0.0</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main id="main-content" class="main-content">
+                <!-- Header -->
+                <header class="app-header">
+                    <div class="header-left">
+                        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                                <line x1="3" y1="12" x2="21" y2="12"/>
+                                <line x1="3" y1="18" x2="21" y2="18"/>
+                            </svg>
+                        </button>
+                        <h1 id="page-title" class="page-title">Dashboard</h1>
+                    </div>
+                    <div class="header-right">
+                        <div class="font-size-controls">
+                            <button id="font-decrease" class="font-control-btn" title="Decrease font size">−</button>
+                            <span id="font-size-display" class="font-size-display">100%</span>
+                            <button id="font-increase" class="font-control-btn" title="Increase font size">+</button>
+                        </div>
+                        <div class="header-user">
+                            <div class="user-avatar">A</div>
+                            <span class="user-name">Admin</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Page Content -->
+                <div id="page-content" class="page-content">
+                    <!-- Dashboard Page -->
+                    <section id="dashboard-page" class="page-section active">
+                        <div class="page-loading">Loading dashboard...</div>
+                    </section>
+
+                    <!-- Projects Page -->
+                    <section id="projects-page" class="page-section">
+                        <div class="page-loading">Loading projects...</div>
+                    </section>
+
+                    <!-- Clients Page -->
+                    <section id="clients-page" class="page-section">
+                        <div class="page-loading">Loading clients...</div>
+                    </section>
+
+                    <!-- Payments Page -->
+                    <section id="payments-page" class="page-section">
+                        <div class="page-loading">Loading payments...</div>
+                    </section>
+
+                    <!-- Finance Page -->
+                    <section id="finance-page" class="page-section">
+                        <div class="page-loading">Loading finance...</div>
+                    </section>
+
+                    <!-- Expenses Page -->
+                    <section id="expenses-page" class="page-section">
+                        <div class="page-loading">Loading expenses...</div>
+                    </section>
+
+                    <!-- Banks Page -->
+                    <section id="banks-page" class="page-section">
+                        <div class="page-loading">Loading banks...</div>
+                    </section>
+
+                    <!-- Settings Page -->
+                    <section id="settings-page" class="page-section">
+                        <div class="page-loading">Loading settings...</div>
+                    </section>
+                </div>
+            </main>
+        </div>
+
+        <!-- Modal Container -->
+        <div id="modal-container" class="modal-container"></div>
+
+        <!-- Toast Container -->
+        <div id="toast-container" class="toast-container"></div>
+    </div>
+
+    <!-- Core JavaScript Files -->
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/core/state.js"></script>
+    <script src="js/core/router.js"></script>
+    <script src="js/core/renderer.js"></script>
+    <script src="js/ui/modal.js"></script>
+    <script src="js/ui/toast.js"></script>
+    <script src="js/ui/dropdown.js"></script>
+    
+    <!-- Module JavaScript Files (loaded in order) -->
+    <script src="js/modules/projects.js"></script>
+    <script src="js/modules/clients.js"></script>
+    <script src="js/modules/payments.js"></script>
+    <script src="js/modules/finance.js"></script>
+    <script src="js/modules/expenses.js"></script>
+    <script src="js/modules/banks.js"></script>
+    <script src="js/modules/dashboard.js"></script>
+    
+    <!-- App Initialization -->
+    <script src="js/app.js"></script>
+</body>
+</html>
